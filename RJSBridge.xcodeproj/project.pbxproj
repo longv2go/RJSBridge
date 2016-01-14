@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AC5E0D71C44D8FC0009AD63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E0D61C44D8FC0009AD63 /* main.m */; };
+		0AC5E0DA1C44D8FC0009AD63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E0D91C44D8FC0009AD63 /* AppDelegate.m */; };
+		0AC5E0DD1C44D8FC0009AD63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E0DC1C44D8FC0009AD63 /* ViewController.m */; };
+		0AC5E0E01C44D8FC0009AD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E0DE1C44D8FC0009AD63 /* Main.storyboard */; };
+		0AC5E0E21C44D8FC0009AD63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E0E11C44D8FC0009AD63 /* Assets.xcassets */; };
+		0AC5E0E51C44D8FC0009AD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E0E31C44D8FC0009AD63 /* LaunchScreen.storyboard */; };
+		0AC5E0F01C44D8FC0009AD63 /* RJSBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E0EF1C44D8FC0009AD63 /* RJSBridgeTests.m */; };
+		0AC5E0FB1C44D8FC0009AD63 /* RJSBridgeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E0FA1C44D8FC0009AD63 /* RJSBridgeUITests.m */; };
+		0AC5E10B1C44D96B0009AD63 /* RJSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E10A1C44D96B0009AD63 /* RJSBridge.m */; };
+		0AC5E11D1C44F1A40009AD63 /* RCTModuleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E11A1C44F1A40009AD63 /* RCTModuleData.m */; };
+		0AC5E11E1C44F1A40009AD63 /* RCTModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E11C1C44F1A40009AD63 /* RCTModuleMethod.m */; };
+		0AC5E12F1C45FC0B0009AD63 /* RCTParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E12E1C45FC0B0009AD63 /* RCTParserUtils.m */; };
+		0AC5E1321C45FCF60009AD63 /* RCTConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1311C45FCF60009AD63 /* RCTConvert.m */; };
+		0AC5E1351C461E4C0009AD63 /* RCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1341C461E4C0009AD63 /* RCTUtils.m */; };
+		0AC5E1381C46308E0009AD63 /* RCTJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */; };
+		0AC5E13B1C476DC10009AD63 /* RJSBridge_aa.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AC5E0EC1C44D8FC0009AD63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AC5E0CA1C44D8FC0009AD63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AC5E0D11C44D8FC0009AD63;
+			remoteInfo = RJSBridge;
+		};
+		0AC5E0F71C44D8FC0009AD63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AC5E0CA1C44D8FC0009AD63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AC5E0D11C44D8FC0009AD63;
+			remoteInfo = RJSBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AC5E0D21C44D8FC0009AD63 /* RJSBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RJSBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC5E0D61C44D8FC0009AD63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0AC5E0D81C44D8FC0009AD63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0AC5E0D91C44D8FC0009AD63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0AC5E0DB1C44D8FC0009AD63 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0AC5E0DC1C44D8FC0009AD63 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0AC5E0DF1C44D8FC0009AD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0AC5E0E11C44D8FC0009AD63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AC5E0E41C44D8FC0009AD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0AC5E0E61C44D8FC0009AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC5E0EB1C44D8FC0009AD63 /* RJSBridgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RJSBridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC5E0EF1C44D8FC0009AD63 /* RJSBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJSBridgeTests.m; sourceTree = "<group>"; };
+		0AC5E0F11C44D8FC0009AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC5E0F61C44D8FC0009AD63 /* RJSBridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RJSBridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC5E0FA1C44D8FC0009AD63 /* RJSBridgeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJSBridgeUITests.m; sourceTree = "<group>"; };
+		0AC5E0FC1C44D8FC0009AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC5E1091C44D96B0009AD63 /* RJSBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridge.h; sourceTree = "<group>"; };
+		0AC5E10A1C44D96B0009AD63 /* RJSBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSBridge.m; sourceTree = "<group>"; };
+		0AC5E10C1C44E1B40009AD63 /* RCTBridgeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTBridgeModule.h; sourceTree = "<group>"; };
+		0AC5E10D1C44E1CD0009AD63 /* RCTDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTDefines.h; sourceTree = "<group>"; };
+		0AC5E1181C44EF490009AD63 /* RJSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
+		0AC5E1191C44F1A40009AD63 /* RCTModuleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTModuleData.h; sourceTree = "<group>"; };
+		0AC5E11A1C44F1A40009AD63 /* RCTModuleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModuleData.m; sourceTree = "<group>"; };
+		0AC5E11B1C44F1A40009AD63 /* RCTModuleMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTModuleMethod.h; sourceTree = "<group>"; };
+		0AC5E11C1C44F1A40009AD63 /* RCTModuleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModuleMethod.m; sourceTree = "<group>"; };
+		0AC5E11F1C44F8300009AD63 /* RCTBridgeMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTBridgeMethod.h; sourceTree = "<group>"; };
+		0AC5E12D1C45FC0B0009AD63 /* RCTParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTParserUtils.h; sourceTree = "<group>"; };
+		0AC5E12E1C45FC0B0009AD63 /* RCTParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTParserUtils.m; sourceTree = "<group>"; };
+		0AC5E1301C45FCF60009AD63 /* RCTConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTConvert.h; sourceTree = "<group>"; };
+		0AC5E1311C45FCF60009AD63 /* RCTConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTConvert.m; sourceTree = "<group>"; };
+		0AC5E1331C461E4C0009AD63 /* RCTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTUtils.h; sourceTree = "<group>"; };
+		0AC5E1341C461E4C0009AD63 /* RCTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUtils.m; sourceTree = "<group>"; };
+		0AC5E1361C46308E0009AD63 /* RCTJSCExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJSCExecutor.h; sourceTree = "<group>"; };
+		0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJSCExecutor.m; sourceTree = "<group>"; };
+		0AC5E1391C4630D70009AD63 /* RCTJavaScriptExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTJavaScriptExecutor.h; sourceTree = "<group>"; };
+		0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge_aa.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AC5E0CF1C44D8FC0009AD63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0E81C44D8FC0009AD63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0F31C44D8FC0009AD63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AC5E0C91C44D8FC0009AD63 = {
+			isa = PBXGroup;
+			children = (
+				0AC5E1081C44D91B0009AD63 /* Bridge */,
+				0AC5E0D41C44D8FC0009AD63 /* RJSBridge */,
+				0AC5E0EE1C44D8FC0009AD63 /* RJSBridgeTests */,
+				0AC5E0F91C44D8FC0009AD63 /* RJSBridgeUITests */,
+				0AC5E0D31C44D8FC0009AD63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AC5E0D31C44D8FC0009AD63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E0D21C44D8FC0009AD63 /* RJSBridge.app */,
+				0AC5E0EB1C44D8FC0009AD63 /* RJSBridgeTests.xctest */,
+				0AC5E0F61C44D8FC0009AD63 /* RJSBridgeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AC5E0D41C44D8FC0009AD63 /* RJSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E0D81C44D8FC0009AD63 /* AppDelegate.h */,
+				0AC5E0D91C44D8FC0009AD63 /* AppDelegate.m */,
+				0AC5E0DB1C44D8FC0009AD63 /* ViewController.h */,
+				0AC5E0DC1C44D8FC0009AD63 /* ViewController.m */,
+				0AC5E0DE1C44D8FC0009AD63 /* Main.storyboard */,
+				0AC5E0E11C44D8FC0009AD63 /* Assets.xcassets */,
+				0AC5E0E31C44D8FC0009AD63 /* LaunchScreen.storyboard */,
+				0AC5E0E61C44D8FC0009AD63 /* Info.plist */,
+				0AC5E0D51C44D8FC0009AD63 /* Supporting Files */,
+			);
+			path = RJSBridge;
+			sourceTree = "<group>";
+		};
+		0AC5E0D51C44D8FC0009AD63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E0D61C44D8FC0009AD63 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0AC5E0EE1C44D8FC0009AD63 /* RJSBridgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E0EF1C44D8FC0009AD63 /* RJSBridgeTests.m */,
+				0AC5E0F11C44D8FC0009AD63 /* Info.plist */,
+			);
+			path = RJSBridgeTests;
+			sourceTree = "<group>";
+		};
+		0AC5E0F91C44D8FC0009AD63 /* RJSBridgeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E0FA1C44D8FC0009AD63 /* RJSBridgeUITests.m */,
+				0AC5E0FC1C44D8FC0009AD63 /* Info.plist */,
+			);
+			path = RJSBridgeUITests;
+			sourceTree = "<group>";
+		};
+		0AC5E1081C44D91B0009AD63 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5E10C1C44E1B40009AD63 /* RCTBridgeModule.h */,
+				0AC5E11F1C44F8300009AD63 /* RCTBridgeMethod.h */,
+				0AC5E10D1C44E1CD0009AD63 /* RCTDefines.h */,
+				0AC5E1191C44F1A40009AD63 /* RCTModuleData.h */,
+				0AC5E11A1C44F1A40009AD63 /* RCTModuleData.m */,
+				0AC5E11B1C44F1A40009AD63 /* RCTModuleMethod.h */,
+				0AC5E11C1C44F1A40009AD63 /* RCTModuleMethod.m */,
+				0AC5E12D1C45FC0B0009AD63 /* RCTParserUtils.h */,
+				0AC5E12E1C45FC0B0009AD63 /* RCTParserUtils.m */,
+				0AC5E1301C45FCF60009AD63 /* RCTConvert.h */,
+				0AC5E1311C45FCF60009AD63 /* RCTConvert.m */,
+				0AC5E1331C461E4C0009AD63 /* RCTUtils.h */,
+				0AC5E1341C461E4C0009AD63 /* RCTUtils.m */,
+				0AC5E1391C4630D70009AD63 /* RCTJavaScriptExecutor.h */,
+				0AC5E1361C46308E0009AD63 /* RCTJSCExecutor.h */,
+				0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */,
+				0AC5E1181C44EF490009AD63 /* RJSDefines.h */,
+				0AC5E1091C44D96B0009AD63 /* RJSBridge.h */,
+				0AC5E10A1C44D96B0009AD63 /* RJSBridge.m */,
+				0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */,
+			);
+			name = Bridge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AC5E0D11C44D8FC0009AD63 /* RJSBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC5E0FF1C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridge" */;
+			buildPhases = (
+				0AC5E0CE1C44D8FC0009AD63 /* Sources */,
+				0AC5E0CF1C44D8FC0009AD63 /* Frameworks */,
+				0AC5E0D01C44D8FC0009AD63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RJSBridge;
+			productName = RJSBridge;
+			productReference = 0AC5E0D21C44D8FC0009AD63 /* RJSBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AC5E0EA1C44D8FC0009AD63 /* RJSBridgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC5E1021C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeTests" */;
+			buildPhases = (
+				0AC5E0E71C44D8FC0009AD63 /* Sources */,
+				0AC5E0E81C44D8FC0009AD63 /* Frameworks */,
+				0AC5E0E91C44D8FC0009AD63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AC5E0ED1C44D8FC0009AD63 /* PBXTargetDependency */,
+			);
+			name = RJSBridgeTests;
+			productName = RJSBridgeTests;
+			productReference = 0AC5E0EB1C44D8FC0009AD63 /* RJSBridgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0AC5E0F51C44D8FC0009AD63 /* RJSBridgeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC5E1051C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeUITests" */;
+			buildPhases = (
+				0AC5E0F21C44D8FC0009AD63 /* Sources */,
+				0AC5E0F31C44D8FC0009AD63 /* Frameworks */,
+				0AC5E0F41C44D8FC0009AD63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AC5E0F81C44D8FC0009AD63 /* PBXTargetDependency */,
+			);
+			name = RJSBridgeUITests;
+			productName = RJSBridgeUITests;
+			productReference = 0AC5E0F61C44D8FC0009AD63 /* RJSBridgeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AC5E0CA1C44D8FC0009AD63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = didi;
+				TargetAttributes = {
+					0AC5E0D11C44D8FC0009AD63 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					0AC5E0EA1C44D8FC0009AD63 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0AC5E0D11C44D8FC0009AD63;
+					};
+					0AC5E0F51C44D8FC0009AD63 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0AC5E0D11C44D8FC0009AD63;
+					};
+				};
+			};
+			buildConfigurationList = 0AC5E0CD1C44D8FC0009AD63 /* Build configuration list for PBXProject "RJSBridge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AC5E0C91C44D8FC0009AD63;
+			productRefGroup = 0AC5E0D31C44D8FC0009AD63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AC5E0D11C44D8FC0009AD63 /* RJSBridge */,
+				0AC5E0EA1C44D8FC0009AD63 /* RJSBridgeTests */,
+				0AC5E0F51C44D8FC0009AD63 /* RJSBridgeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AC5E0D01C44D8FC0009AD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC5E0E51C44D8FC0009AD63 /* LaunchScreen.storyboard in Resources */,
+				0AC5E0E21C44D8FC0009AD63 /* Assets.xcassets in Resources */,
+				0AC5E0E01C44D8FC0009AD63 /* Main.storyboard in Resources */,
+				0AC5E13B1C476DC10009AD63 /* RJSBridge_aa.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0E91C44D8FC0009AD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0F41C44D8FC0009AD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AC5E0CE1C44D8FC0009AD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC5E0DD1C44D8FC0009AD63 /* ViewController.m in Sources */,
+				0AC5E1321C45FCF60009AD63 /* RCTConvert.m in Sources */,
+				0AC5E0DA1C44D8FC0009AD63 /* AppDelegate.m in Sources */,
+				0AC5E1381C46308E0009AD63 /* RCTJSCExecutor.m in Sources */,
+				0AC5E11E1C44F1A40009AD63 /* RCTModuleMethod.m in Sources */,
+				0AC5E10B1C44D96B0009AD63 /* RJSBridge.m in Sources */,
+				0AC5E0D71C44D8FC0009AD63 /* main.m in Sources */,
+				0AC5E12F1C45FC0B0009AD63 /* RCTParserUtils.m in Sources */,
+				0AC5E11D1C44F1A40009AD63 /* RCTModuleData.m in Sources */,
+				0AC5E1351C461E4C0009AD63 /* RCTUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0E71C44D8FC0009AD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC5E0F01C44D8FC0009AD63 /* RJSBridgeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC5E0F21C44D8FC0009AD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC5E0FB1C44D8FC0009AD63 /* RJSBridgeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AC5E0ED1C44D8FC0009AD63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AC5E0D11C44D8FC0009AD63 /* RJSBridge */;
+			targetProxy = 0AC5E0EC1C44D8FC0009AD63 /* PBXContainerItemProxy */;
+		};
+		0AC5E0F81C44D8FC0009AD63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AC5E0D11C44D8FC0009AD63 /* RJSBridge */;
+			targetProxy = 0AC5E0F71C44D8FC0009AD63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0AC5E0DE1C44D8FC0009AD63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AC5E0DF1C44D8FC0009AD63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0AC5E0E31C44D8FC0009AD63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AC5E0E41C44D8FC0009AD63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0AC5E0FD1C44D8FC0009AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0AC5E0FE1C44D8FC0009AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AC5E1001C44D8FC0009AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RJSBridge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0AC5E1011C44D8FC0009AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RJSBridge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0AC5E1031C44D8FC0009AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RJSBridgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RJSBridge.app/RJSBridge";
+			};
+			name = Debug;
+		};
+		0AC5E1041C44D8FC0009AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RJSBridgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RJSBridge.app/RJSBridge";
+			};
+			name = Release;
+		};
+		0AC5E1061C44D8FC0009AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RJSBridgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RJSBridge;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0AC5E1071C44D8FC0009AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RJSBridgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dudu.RJSBridgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RJSBridge;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AC5E0CD1C44D8FC0009AD63 /* Build configuration list for PBXProject "RJSBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC5E0FD1C44D8FC0009AD63 /* Debug */,
+				0AC5E0FE1C44D8FC0009AD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AC5E0FF1C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC5E1001C44D8FC0009AD63 /* Debug */,
+				0AC5E1011C44D8FC0009AD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0AC5E1021C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC5E1031C44D8FC0009AD63 /* Debug */,
+				0AC5E1041C44D8FC0009AD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0AC5E1051C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC5E1061C44D8FC0009AD63 /* Debug */,
+				0AC5E1071C44D8FC0009AD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AC5E0CA1C44D8FC0009AD63 /* Project object */;
+}
