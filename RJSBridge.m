@@ -70,7 +70,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 @property (nonatomic, strong) NSMutableDictionary<NSString *, RCTModuleData *> *moduleDataByName;
 @property (nonatomic, strong) NSArray<Class> *moduleClassesByID;
 
-@property (nonatomic, weak) RCTJSCExecutor *javaScriptExecutor;
+@property (nonatomic, strong) RCTJSCExecutor *javaScriptExecutor;
 @end
 
 @implementation RJSBridge
@@ -82,15 +82,100 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 {
   if (self = [super init]) {
     _context = ctx;
-    [self setup];
+    [self start];
   }
   return self;
 }
 
-- (void)setup
+- (void)start
 {
+  
+  NSData *sourceCode = [RJSBridge loadSource];
+  
   // Synchronously initialize all native modules that cannot be loaded lazily
   [self initModules];
+  
+  dispatch_queue_t bridgeQueue = dispatch_queue_create("com.facebook.react.RCTBridgeQueue", DISPATCH_QUEUE_CONCURRENT);
+  dispatch_group_t initModulesAndLoadSource = dispatch_group_create();
+  
+  __weak RJSBridge *weakSelf = self;
+  __block NSString *config;
+  
+  dispatch_group_enter(initModulesAndLoadSource);
+  dispatch_async(bridgeQueue, ^{
+    dispatch_group_t setupJSExecutorAndModuleConfig = dispatch_group_create();
+    
+    // Asynchronously initialize the JS executor
+    dispatch_group_async(setupJSExecutorAndModuleConfig, bridgeQueue, ^{
+      [weakSelf setUpExecutor];
+    });
+    
+    // Asynchronously gather the module config
+    dispatch_group_async(setupJSExecutorAndModuleConfig, bridgeQueue, ^{
+//      if (weakSelf.isValid) {
+        config = [weakSelf moduleConfig];
+//      }
+    });
+    
+    dispatch_group_notify(setupJSExecutorAndModuleConfig, bridgeQueue, ^{
+      // We're not waiting for this to complete to leave dispatch group, since
+      // injectJSONConfiguration and executeSourceCode will schedule operations
+      // on the same queue anyway.
+      [weakSelf injectJSONConfiguration:config onComplete:^(NSError *error) {
+        if (error) {
+          dispatch_async(dispatch_get_main_queue(), ^{
+            NSAssert(NO, @"");
+          });
+        }
+      }];
+      dispatch_group_leave(initModulesAndLoadSource);
+    });
+  });
+  
+  dispatch_group_notify(initModulesAndLoadSource, dispatch_get_main_queue(), ^{
+    if (sourceCode) {
+      dispatch_async(bridgeQueue, ^{
+        [weakSelf executeSourceCode:sourceCode];
+      });
+    }
+  });
+}
+
+- (void)executeSourceCode:(NSData *)sourceCode
+{
+  NSAssert(sourceCode, @"");
+  [_javaScriptExecutor executeApplicationScript:sourceCode sourceURL:nil onComplete:^(NSError *error) {
+    
+  }];
+}
+
+- (void)injectJSONConfiguration:(NSString *)configJSON
+                     onComplete:(void (^)(NSError *))onComplete
+{
+//  if (!self.valid) {
+//    return;
+//  }
+  
+  [_javaScriptExecutor injectJSONText:configJSON
+                  asGlobalObjectNamed:@"__fbBatchedBridgeConfig"
+                             callback:onComplete];
+}
+
+- (NSString *)moduleConfig
+{
+  NSMutableArray<NSArray *> *config = [NSMutableArray new];
+  for (RCTModuleData *moduleData in _moduleDataByID) {
+      [config addObject:@[moduleData.name]];
+  }
+  
+  return RCTJSONStringify(@{
+                            @"remoteModuleConfig": config,
+                            }, NULL);
+}
+
+- (void)setUpExecutor
+{
+  [_javaScriptExecutor setUp];
 }
 
 - (void)initModules
@@ -118,16 +203,22 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
   _moduleClassesByID = [moduleDataByID valueForKey:@"moduleClass"];
   
   // create executor
+  _javaScriptExecutor = [[RCTJSCExecutor alloc] initWithContext:_context];
+  [_javaScriptExecutor setBridge:self];
 
-
+  for (RCTModuleData *moduleData in _moduleDataByID) {
+    if (moduleData.hasInstance) {
+      [moduleData methodQueue]; // initialize the queue
+    }
+  }
 }
 
-+ (NSString *)loadSource
++ (NSData *)loadSource
 {
-  static NSString *source = nil;
+  static NSData *source = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    source = nil;// TODO:
+    source = [NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/RJSBridge_aa.js", [[NSBundle mainBundle] bundlePath]]];
   });
   
   return source;
@@ -271,6 +362,55 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
    } else {
      [_javaScriptExecutor executeBlockOnJavaScriptQueue:block];
    }
+}
+
+/**
+ * Called by RCTModuleMethod from any thread.
+ */
+- (void)enqueueCallback:(NSNumber *)cbID args:(NSArray *)args
+{
+  /**
+   * AnyThread
+   */
+  
+  __weak RJSBridge *weakSelf = self;
+  [_javaScriptExecutor executeBlockOnJavaScriptQueue:^{
+    
+    RJSBridge *strongSelf = weakSelf;
+    if (!strongSelf) {
+      return;
+    }
+    
+    // TODO: 如果在loading过程中执行callback
+    
+//    if (strongSelf.loading) {
+//      dispatch_block_t pendingCall = ^{
+//        [weakSelf _actuallyInvokeCallback:cbID arguments:args ?: @[]];
+//      };
+//      [strongSelf->_pendingCalls addObject:pendingCall];
+//    } else {
+      [strongSelf _actuallyInvokeCallback:cbID arguments:args];
+//    }
+  }];
+}
+
+- (void)_actuallyInvokeCallback:(NSNumber *)cbID
+                      arguments:(NSArray *)args
+{
+  RCTAssertJSThread();
+  
+  RCTJavaScriptCallback processResponse = ^(id json, NSError *error) {
+    NSAssert(!error, @"");
+    
+//    if (!self.isValid) {
+//      return;
+//    }
+    [self handleBuffer:json batchEnded:YES];
+  };
+  
+  [_javaScriptExecutor invokeCallbackID:cbID
+                              arguments:args
+                               callback:processResponse];
 }
 
 @end

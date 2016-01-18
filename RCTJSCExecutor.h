@@ -16,6 +16,8 @@
  */
 @interface RCTJSCExecutor : NSObject <RCTJavaScriptExecutor>
 
+@property (nonatomic, weak) RJSBridge *bridge;
+
 /**
  * Configures the executor to run JavaScript on a specific thread with a given JS context.
  * You probably don't want to use this; use -init instead.
@@ -30,5 +32,11 @@
                         globalContextRef:(JSGlobalContextRef)contextRef;
 
 - (instancetype)initWithContext:(JSContext *)context NS_DESIGNATED_INITIALIZER;
+
+
+- (void)executeApplicationScript:(NSData *)script
+                       sourceURL:(NSURL *)sourceURL
+                      onComplete:(RCTJavaScriptCompleteBlock)onComplete;
+
 
 @end

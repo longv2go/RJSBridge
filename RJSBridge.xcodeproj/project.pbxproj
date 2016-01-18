@@ -22,7 +22,8 @@
 		0AC5E1321C45FCF60009AD63 /* RCTConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1311C45FCF60009AD63 /* RCTConvert.m */; };
 		0AC5E1351C461E4C0009AD63 /* RCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1341C461E4C0009AD63 /* RCTUtils.m */; };
 		0AC5E1381C46308E0009AD63 /* RCTJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */; };
-		0AC5E13B1C476DC10009AD63 /* RJSBridge_aa.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */; };
+		0AC5E13E1C4CB82F0009AD63 /* ExportModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */; };
+		0AC5E14A1C4CC39C0009AD63 /* RJSBridge_aa.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E1491C4CC39C0009AD63 /* RJSBridge_aa.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +79,9 @@
 		0AC5E1361C46308E0009AD63 /* RCTJSCExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJSCExecutor.h; sourceTree = "<group>"; };
 		0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJSCExecutor.m; sourceTree = "<group>"; };
 		0AC5E1391C4630D70009AD63 /* RCTJavaScriptExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTJavaScriptExecutor.h; sourceTree = "<group>"; };
-		0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge_aa.js; sourceTree = "<group>"; };
+		0AC5E13C1C4CB82F0009AD63 /* ExportModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportModule.h; sourceTree = "<group>"; };
+		0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportModule.m; sourceTree = "<group>"; };
+		0AC5E1491C4CC39C0009AD63 /* RJSBridge_aa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RJSBridge_aa.js; path = ../../Documents/react_js/RJSBridge_aa.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				0AC5E0D91C44D8FC0009AD63 /* AppDelegate.m */,
 				0AC5E0DB1C44D8FC0009AD63 /* ViewController.h */,
 				0AC5E0DC1C44D8FC0009AD63 /* ViewController.m */,
+				0AC5E13C1C4CB82F0009AD63 /* ExportModule.h */,
+				0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */,
 				0AC5E0DE1C44D8FC0009AD63 /* Main.storyboard */,
 				0AC5E0E11C44D8FC0009AD63 /* Assets.xcassets */,
 				0AC5E0E31C44D8FC0009AD63 /* LaunchScreen.storyboard */,
@@ -191,7 +196,7 @@
 				0AC5E1181C44EF490009AD63 /* RJSDefines.h */,
 				0AC5E1091C44D96B0009AD63 /* RJSBridge.h */,
 				0AC5E10A1C44D96B0009AD63 /* RJSBridge.m */,
-				0AC5E13A1C476DC10009AD63 /* RJSBridge_aa.js */,
+				0AC5E1491C4CC39C0009AD63 /* RJSBridge_aa.js */,
 			);
 			name = Bridge;
 			sourceTree = "<group>";
@@ -302,7 +307,7 @@
 				0AC5E0E51C44D8FC0009AD63 /* LaunchScreen.storyboard in Resources */,
 				0AC5E0E21C44D8FC0009AD63 /* Assets.xcassets in Resources */,
 				0AC5E0E01C44D8FC0009AD63 /* Main.storyboard in Resources */,
-				0AC5E13B1C476DC10009AD63 /* RJSBridge_aa.js in Resources */,
+				0AC5E14A1C4CC39C0009AD63 /* RJSBridge_aa.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +340,7 @@
 				0AC5E10B1C44D96B0009AD63 /* RJSBridge.m in Sources */,
 				0AC5E0D71C44D8FC0009AD63 /* main.m in Sources */,
 				0AC5E12F1C45FC0B0009AD63 /* RCTParserUtils.m in Sources */,
+				0AC5E13E1C4CB82F0009AD63 /* ExportModule.m in Sources */,
 				0AC5E11D1C44F1A40009AD63 /* RCTModuleData.m in Sources */,
 				0AC5E1351C461E4C0009AD63 /* RCTUtils.m in Sources */,
 			);

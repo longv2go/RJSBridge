@@ -228,8 +228,10 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
     if (!strongSelf.valid || !calls) {
       return;
     }
-
-    [strongSelf->_bridge handleBuffer:calls batchEnded:NO];
+    
+    [strongSelf executeAsyncBlockOnJavaScriptQueue:^{
+      [strongSelf->_bridge handleBuffer:calls batchEnded:NO];
+    }];
   }];
 
   [self addSynchronousHookWithName:@"nativePerformanceNow" usingBlock:^{
@@ -395,7 +397,6 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
                       onComplete:(RCTJavaScriptCompleteBlock)onComplete
 {
   NSAssert(script, @"");
-  NSAssert(sourceURL, @"");
 
   __weak RCTJSCExecutor *weakSelf = self;
   [self executeBlockOnJavaScriptQueue:^{
@@ -412,9 +413,14 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 
     JSValueRef jsError = NULL;
     JSStringRef execJSString = JSStringCreateWithUTF8CString(nullTerminatedScript.bytes);
-    JSStringRef jsURL = JSStringCreateWithCFString((__bridge CFStringRef)sourceURL.absoluteString);
+    JSStringRef jsURL = NULL;
+    if (sourceURL) {
+      jsURL = JSStringCreateWithCFString((__bridge CFStringRef)sourceURL.absoluteString);
+    }
     JSValueRef result = JSEvaluateScript(strongSelf->_context.ctx, execJSString, NULL, jsURL, 0, &jsError);
-    JSStringRelease(jsURL);
+    if (jsURL) {
+      JSStringRelease(jsURL);
+    }
     JSStringRelease(execJSString);
 
     if (onComplete) {
