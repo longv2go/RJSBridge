@@ -17,4 +17,9 @@ RCT_EXPORT_METHOD(hello:(NSString *)world)
   NSLog(@"--- %@", world);
 }
 
+RCT_EXPORT_METHOD(callback:(RCTResponseSenderBlock)back)
+{
+  back(@[@"first", @"second"]);
+}
+
 @end
