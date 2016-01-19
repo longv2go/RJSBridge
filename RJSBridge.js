@@ -414,17 +414,6 @@ function createErrorFromErrorData(errorData) {
   return Object.assign(error, extraErrorInfo);
 }
 
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule BatchedBridge
- */
-
 var BatchedBridge = new MessageQueue(__fbBatchedBridgeConfig.remoteModuleConfig, __fbBatchedBridgeConfig.localModulesConfig);
 
 // Wire up the batched bridge on the global object so that we can call into it.
@@ -434,18 +423,6 @@ var BatchedBridge = new MessageQueue(__fbBatchedBridgeConfig.remoteModuleConfig,
 // MessageQueue to its minimal features and embed that in the native runtime.
 
 Object.defineProperty(global, '__fbBatchedBridge', { value: BatchedBridge });
-
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule NativeModules
- * 
- */
 
 var RemoteModules = BatchedBridge.RemoteModules;
 
