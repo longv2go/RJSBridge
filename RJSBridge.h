@@ -37,4 +37,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls);
  */
 - (void)handleBuffer:(NSArray<NSArray *> *)buffer batchEnded:(BOOL)hasEnded;
 
+
++ (BOOL)isContextBridged:(JSContext *)context;
+
 @end

@@ -34,6 +34,9 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
   _bridge = [[RJSBridge alloc] initWithContext:[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"]];
+  
+  _bridge = [[RJSBridge alloc] initWithContext:[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"]];
+
 }
 
 @end

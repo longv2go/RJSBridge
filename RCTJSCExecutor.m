@@ -415,6 +415,9 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
       jsURL = JSStringCreateWithCFString((__bridge CFStringRef)sourceURL.absoluteString);
     }
     JSValueRef result = JSEvaluateScript(strongSelf->_context.ctx, execJSString, NULL, jsURL, 0, &jsError);
+    
+//    NSAssert(result, @"");
+    
     if (jsURL) {
       JSStringRelease(jsURL);
     }

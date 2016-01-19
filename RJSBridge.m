@@ -413,4 +413,13 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
                                callback:processResponse];
 }
 
++ (BOOL)isContextBridged:(JSContext *)context
+{
+  JSValue *rjs = context[@"_rjs"]; // This name should sync with that define in RJSBridge.js
+  if (rjs) {
+    return !rjs.isUndefined;
+  }
+  return NO;
+}
+
 @end

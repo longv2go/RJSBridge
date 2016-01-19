@@ -467,5 +467,11 @@ Object.keys(RemoteModules).forEach(function (moduleName) {
 
 Object.defineProperty(global, '_rjs', { value: NativeModules });
 
+  
+var readyEvent = global.document.createEvent('Events')
+readyEvent.initEvent('_RJSBridgeReadyEvent')
+readyEvent.bridge = global._rjs
+global.document.dispatchEvent(readyEvent)
+
 })(window);
 
