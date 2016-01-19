@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title><a href="">RJS TEST</a></title>
+    <script type="text/javascript">
+      function connectRJSBridge(callback) {
+        if (window._rjs) {
+          callback(_rjs)
+        } else {
+          document.addEventListener('_RJSBridgeReadyEvent', function() {
+                                    callback(_rjs)
+                                    }, false)
+        }
+      }
+    
+    connectRJSBridge(function(rjs){
+                     var log = document.getElementById('out');
+                     log.innerHTML = stringify(rjs.ExportModule);
+                     });
+    
+    </script>
+  </head>
+  <body>
+    <p>This is a test page!!!</p>
+    <p id="out"></p>
+  </body>
+</html>

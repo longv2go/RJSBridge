@@ -97,7 +97,6 @@ NSError *RCTErrorWithMessage(NSString *message)
 
 static id _RCTJSONParse(NSString *jsonString, BOOL mutable, NSError **error)
 {
-  
   if (jsonString) {
     
     // Use Foundation JSON method

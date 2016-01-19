@@ -22,7 +22,9 @@
   _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
   _webView.delegate = self;
   [self.view addSubview:_webView];
-  [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://127.0.0.1:8000/test.html"]]];
+//  [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://127.0.0.1:8000/test.html"]]];
+  
+  [_webView loadHTMLString:[NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/test.html",[NSBundle mainBundle].bundlePath]] baseURL:nil];
   
 }
 

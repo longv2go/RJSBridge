@@ -24,6 +24,7 @@
 		0AC5E1381C46308E0009AD63 /* RCTJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */; };
 		0AC5E13E1C4CB82F0009AD63 /* ExportModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */; };
 		0AC5E14C1C4CCF650009AD63 /* RJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E14B1C4CCF650009AD63 /* RJSBridge.js */; };
+		0AC5E14E1C4E25C00009AD63 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E14D1C4E25C00009AD63 /* test.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		0AC5E13C1C4CB82F0009AD63 /* ExportModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportModule.h; sourceTree = "<group>"; };
 		0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportModule.m; sourceTree = "<group>"; };
 		0AC5E14B1C4CCF650009AD63 /* RJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge.js; sourceTree = "<group>"; };
+		0AC5E14D1C4E25C00009AD63 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				0AC5E0DC1C44D8FC0009AD63 /* ViewController.m */,
 				0AC5E13C1C4CB82F0009AD63 /* ExportModule.h */,
 				0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */,
+				0AC5E14D1C4E25C00009AD63 /* test.html */,
 				0AC5E0DE1C44D8FC0009AD63 /* Main.storyboard */,
 				0AC5E0E11C44D8FC0009AD63 /* Assets.xcassets */,
 				0AC5E0E31C44D8FC0009AD63 /* LaunchScreen.storyboard */,
@@ -307,6 +310,7 @@
 				0AC5E0E51C44D8FC0009AD63 /* LaunchScreen.storyboard in Resources */,
 				0AC5E0E21C44D8FC0009AD63 /* Assets.xcassets in Resources */,
 				0AC5E0E01C44D8FC0009AD63 /* Main.storyboard in Resources */,
+				0AC5E14E1C4E25C00009AD63 /* test.html in Resources */,
 				0AC5E14C1C4CCF650009AD63 /* RJSBridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
