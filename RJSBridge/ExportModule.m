@@ -17,9 +17,10 @@ RCT_EXPORT_METHOD(hello:(NSString *)world)
   NSLog(@"--- %@", world);
 }
 
-RCT_EXPORT_METHOD(callback:(RCTResponseSenderBlock)back)
+RCT_EXPORT_METHOD(call:(NSString *)hi back:(RCTResponseSenderBlock)back)
 {
-  back(@[@"first", @"second"]);
+  NSLog(@"-------- ");
+  back(@[[NSString stringWithFormat:@"%@, who are you?", hi], @"second"]);
 }
 
 @end

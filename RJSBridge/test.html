@@ -4,23 +4,37 @@
     <script type="text/javascript">
       function connectRJSBridge(callback) {
         if (window._rjs) {
-          callback(_rjs)
+          callback(window._rjs)
         } else {
           document.addEventListener('_RJSBridgeReadyEvent', function() {
-                                    callback(_rjs)
-                                    }, false)
+            callback(window._rjs)
+          }, false);
         }
       }
     
     connectRJSBridge(function(rjs){
-                     var log = document.getElementById('out');
-                     log.innerHTML = stringify(rjs.ExportModule);
-                     });
+     var log = document.getElementById('out');
+
+     rjs.ExportModule.call("hello", function(a){
+         log.innerHTML = a                           
+        });
+     });
+     
+     
+     function clickButton(){
+       var log = document.getElementById('out');
+       
+       window._rjs.ExportModule.call("Good", function(a){
+          log.innerHTML = a
+       });
+
+     }
     
     </script>
   </head>
   <body>
     <p>This is a test page!!!</p>
+    <button onclick="clickButton()">Button</button>
     <p id="out"></p>
   </body>
 </html>
