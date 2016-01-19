@@ -14,12 +14,12 @@
 		0AC5E16B1C4E30520009AD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E1691C4E30520009AD63 /* LaunchScreen.storyboard */; };
 		0AC5E1761C4E30520009AD63 /* RJSBridgeTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1751C4E30520009AD63 /* RJSBridgeTestAppTests.m */; };
 		0AC5E1811C4E30520009AD63 /* RJSBridgeTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1801C4E30520009AD63 /* RJSBridgeTestAppUITests.m */; };
-		0AC5E1AD1C4E30F10009AD63 /* RCTConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E19E1C4E30F10009AD63 /* RCTConvert.m */; };
-		0AC5E1AE1C4E30F10009AD63 /* RCTJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A21C4E30F10009AD63 /* RCTJSCExecutor.m */; };
-		0AC5E1AF1C4E30F10009AD63 /* RCTModuleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A41C4E30F10009AD63 /* RCTModuleData.m */; };
-		0AC5E1B01C4E30F10009AD63 /* RCTModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A61C4E30F10009AD63 /* RCTModuleMethod.m */; };
-		0AC5E1B11C4E30F10009AD63 /* RCTParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A81C4E30F10009AD63 /* RCTParserUtils.m */; };
-		0AC5E1B21C4E30F10009AD63 /* RCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1AA1C4E30F10009AD63 /* RCTUtils.m */; };
+		0AC5E1AD1C4E30F10009AD63 /* RJSConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E19E1C4E30F10009AD63 /* RJSConvert.m */; };
+		0AC5E1AE1C4E30F10009AD63 /* RJSJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A21C4E30F10009AD63 /* RJSJSCExecutor.m */; };
+		0AC5E1AF1C4E30F10009AD63 /* RJSModuleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A41C4E30F10009AD63 /* RJSModuleData.m */; };
+		0AC5E1B01C4E30F10009AD63 /* RJSModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A61C4E30F10009AD63 /* RJSModuleMethod.m */; };
+		0AC5E1B11C4E30F10009AD63 /* RJSParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1A81C4E30F10009AD63 /* RJSParserUtils.m */; };
+		0AC5E1B21C4E30F10009AD63 /* RJSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1AA1C4E30F10009AD63 /* RJSUtils.m */; };
 		0AC5E1B51C4E310D0009AD63 /* RJSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1B41C4E310D0009AD63 /* RJSBridge.m */; };
 		0AC5E1BA1C4E316B0009AD63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1B91C4E316B0009AD63 /* ViewController.m */; };
 		0AC5E1BC1C4E31790009AD63 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E1BB1C4E31790009AD63 /* test.html */; };
@@ -80,22 +80,22 @@
 		0AC5E1801C4E30520009AD63 /* RJSBridgeTestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJSBridgeTestAppUITests.m; sourceTree = "<group>"; };
 		0AC5E1821C4E30520009AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC5E1921C4E30C60009AD63 /* libRJSBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRJSBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AC5E19B1C4E30F00009AD63 /* RCTBridgeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBridgeMethod.h; sourceTree = "<group>"; };
-		0AC5E19C1C4E30F10009AD63 /* RCTBridgeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBridgeModule.h; sourceTree = "<group>"; };
-		0AC5E19D1C4E30F10009AD63 /* RCTConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTConvert.h; sourceTree = "<group>"; };
-		0AC5E19E1C4E30F10009AD63 /* RCTConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTConvert.m; sourceTree = "<group>"; };
-		0AC5E19F1C4E30F10009AD63 /* RCTDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTDefines.h; sourceTree = "<group>"; };
-		0AC5E1A01C4E30F10009AD63 /* RCTJavaScriptExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJavaScriptExecutor.h; sourceTree = "<group>"; };
-		0AC5E1A11C4E30F10009AD63 /* RCTJSCExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJSCExecutor.h; sourceTree = "<group>"; };
-		0AC5E1A21C4E30F10009AD63 /* RCTJSCExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJSCExecutor.m; sourceTree = "<group>"; };
-		0AC5E1A31C4E30F10009AD63 /* RCTModuleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTModuleData.h; sourceTree = "<group>"; };
-		0AC5E1A41C4E30F10009AD63 /* RCTModuleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModuleData.m; sourceTree = "<group>"; };
-		0AC5E1A51C4E30F10009AD63 /* RCTModuleMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTModuleMethod.h; sourceTree = "<group>"; };
-		0AC5E1A61C4E30F10009AD63 /* RCTModuleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModuleMethod.m; sourceTree = "<group>"; };
-		0AC5E1A71C4E30F10009AD63 /* RCTParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTParserUtils.h; sourceTree = "<group>"; };
-		0AC5E1A81C4E30F10009AD63 /* RCTParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTParserUtils.m; sourceTree = "<group>"; };
-		0AC5E1A91C4E30F10009AD63 /* RCTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTUtils.h; sourceTree = "<group>"; };
-		0AC5E1AA1C4E30F10009AD63 /* RCTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUtils.m; sourceTree = "<group>"; };
+		0AC5E19B1C4E30F00009AD63 /* RJSBridgeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridgeMethod.h; sourceTree = "<group>"; };
+		0AC5E19C1C4E30F10009AD63 /* RJSBridgeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridgeModule.h; sourceTree = "<group>"; };
+		0AC5E19D1C4E30F10009AD63 /* RJSConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSConvert.h; sourceTree = "<group>"; };
+		0AC5E19E1C4E30F10009AD63 /* RJSConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSConvert.m; sourceTree = "<group>"; };
+		0AC5E19F1C4E30F10009AD63 /* RJSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
+		0AC5E1A01C4E30F10009AD63 /* RJSJavaScriptExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSJavaScriptExecutor.h; sourceTree = "<group>"; };
+		0AC5E1A11C4E30F10009AD63 /* RJSJSCExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSJSCExecutor.h; sourceTree = "<group>"; };
+		0AC5E1A21C4E30F10009AD63 /* RJSJSCExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSJSCExecutor.m; sourceTree = "<group>"; };
+		0AC5E1A31C4E30F10009AD63 /* RJSModuleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSModuleData.h; sourceTree = "<group>"; };
+		0AC5E1A41C4E30F10009AD63 /* RJSModuleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSModuleData.m; sourceTree = "<group>"; };
+		0AC5E1A51C4E30F10009AD63 /* RJSModuleMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSModuleMethod.h; sourceTree = "<group>"; };
+		0AC5E1A61C4E30F10009AD63 /* RJSModuleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSModuleMethod.m; sourceTree = "<group>"; };
+		0AC5E1A71C4E30F10009AD63 /* RJSParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSParserUtils.h; sourceTree = "<group>"; };
+		0AC5E1A81C4E30F10009AD63 /* RJSParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSParserUtils.m; sourceTree = "<group>"; };
+		0AC5E1A91C4E30F10009AD63 /* RJSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSUtils.h; sourceTree = "<group>"; };
+		0AC5E1AA1C4E30F10009AD63 /* RJSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSUtils.m; sourceTree = "<group>"; };
 		0AC5E1AB1C4E30F10009AD63 /* RJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge.js; sourceTree = "<group>"; };
 		0AC5E1AC1C4E30F10009AD63 /* RJSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
 		0AC5E1B31C4E310D0009AD63 /* RJSBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridge.h; sourceTree = "<group>"; };
@@ -210,22 +210,22 @@
 		0AC5E1931C4E30C60009AD63 /* RJSBridge */ = {
 			isa = PBXGroup;
 			children = (
-				0AC5E19B1C4E30F00009AD63 /* RCTBridgeMethod.h */,
-				0AC5E19C1C4E30F10009AD63 /* RCTBridgeModule.h */,
-				0AC5E19D1C4E30F10009AD63 /* RCTConvert.h */,
-				0AC5E19E1C4E30F10009AD63 /* RCTConvert.m */,
-				0AC5E19F1C4E30F10009AD63 /* RCTDefines.h */,
-				0AC5E1A01C4E30F10009AD63 /* RCTJavaScriptExecutor.h */,
-				0AC5E1A11C4E30F10009AD63 /* RCTJSCExecutor.h */,
-				0AC5E1A21C4E30F10009AD63 /* RCTJSCExecutor.m */,
-				0AC5E1A31C4E30F10009AD63 /* RCTModuleData.h */,
-				0AC5E1A41C4E30F10009AD63 /* RCTModuleData.m */,
-				0AC5E1A51C4E30F10009AD63 /* RCTModuleMethod.h */,
-				0AC5E1A61C4E30F10009AD63 /* RCTModuleMethod.m */,
-				0AC5E1A71C4E30F10009AD63 /* RCTParserUtils.h */,
-				0AC5E1A81C4E30F10009AD63 /* RCTParserUtils.m */,
-				0AC5E1A91C4E30F10009AD63 /* RCTUtils.h */,
-				0AC5E1AA1C4E30F10009AD63 /* RCTUtils.m */,
+				0AC5E19B1C4E30F00009AD63 /* RJSBridgeMethod.h */,
+				0AC5E19C1C4E30F10009AD63 /* RJSBridgeModule.h */,
+				0AC5E19D1C4E30F10009AD63 /* RJSConvert.h */,
+				0AC5E19E1C4E30F10009AD63 /* RJSConvert.m */,
+				0AC5E19F1C4E30F10009AD63 /* RJSDefines.h */,
+				0AC5E1A01C4E30F10009AD63 /* RJSJavaScriptExecutor.h */,
+				0AC5E1A11C4E30F10009AD63 /* RJSJSCExecutor.h */,
+				0AC5E1A21C4E30F10009AD63 /* RJSJSCExecutor.m */,
+				0AC5E1A31C4E30F10009AD63 /* RJSModuleData.h */,
+				0AC5E1A41C4E30F10009AD63 /* RJSModuleData.m */,
+				0AC5E1A51C4E30F10009AD63 /* RJSModuleMethod.h */,
+				0AC5E1A61C4E30F10009AD63 /* RJSModuleMethod.m */,
+				0AC5E1A71C4E30F10009AD63 /* RJSParserUtils.h */,
+				0AC5E1A81C4E30F10009AD63 /* RJSParserUtils.m */,
+				0AC5E1A91C4E30F10009AD63 /* RJSUtils.h */,
+				0AC5E1AA1C4E30F10009AD63 /* RJSUtils.m */,
 				0AC5E1AB1C4E30F10009AD63 /* RJSBridge.js */,
 				0AC5E1AC1C4E30F10009AD63 /* RJSDefines.h */,
 				0AC5E1B31C4E310D0009AD63 /* RJSBridge.h */,
@@ -415,13 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AC5E1B11C4E30F10009AD63 /* RCTParserUtils.m in Sources */,
-				0AC5E1B01C4E30F10009AD63 /* RCTModuleMethod.m in Sources */,
-				0AC5E1AD1C4E30F10009AD63 /* RCTConvert.m in Sources */,
-				0AC5E1AE1C4E30F10009AD63 /* RCTJSCExecutor.m in Sources */,
-				0AC5E1AF1C4E30F10009AD63 /* RCTModuleData.m in Sources */,
+				0AC5E1B11C4E30F10009AD63 /* RJSParserUtils.m in Sources */,
+				0AC5E1B01C4E30F10009AD63 /* RJSModuleMethod.m in Sources */,
+				0AC5E1AD1C4E30F10009AD63 /* RJSConvert.m in Sources */,
+				0AC5E1AE1C4E30F10009AD63 /* RJSJSCExecutor.m in Sources */,
+				0AC5E1AF1C4E30F10009AD63 /* RJSModuleData.m in Sources */,
 				0AC5E1B51C4E310D0009AD63 /* RJSBridge.m in Sources */,
-				0AC5E1B21C4E30F10009AD63 /* RCTUtils.m in Sources */,
+				0AC5E1B21C4E30F10009AD63 /* RJSUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +652,7 @@
 				0AC5E1871C4E30520009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC5E1881C4E30520009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +661,7 @@
 				0AC5E18A1C4E30520009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC5E18B1C4E30520009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeTestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +670,7 @@
 				0AC5E18D1C4E30520009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC5E1981C4E30C60009AD63 /* Build configuration list for PBXNativeTarget "RJSBridge" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +679,7 @@
 				0AC5E19A1C4E30C60009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

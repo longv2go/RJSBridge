@@ -5,14 +5,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "RCTBridgeModule.h"
+#import "RJSBridgeModule.h"
 
-@protocol RCTBridgeMethod;
+@protocol RJSBridgeMethod;
 @class RJSBridge;
 
-@interface RCTModuleData : NSObject
+@interface RJSModuleData : NSObject
 
-- (instancetype)initWithModuleInstance:(id<RCTBridgeModule>)instance
+- (instancetype)initWithModuleInstance:(id<RJSBridgeModule>)instance
                                 bridge:(RJSBridge *)bridge;
 
 
@@ -23,7 +23,7 @@
  * Returns the module methods. Note that this will gather the methods the first
  * time it is called and then memoize the results.
  */
-@property (nonatomic, copy, readonly) NSArray<id<RCTBridgeMethod>> *methods;
+@property (nonatomic, copy, readonly) NSArray<id<RJSBridgeMethod>> *methods;
 
 /**
  * Returns YES if module instance has already been initialized; NO otherwise.
@@ -35,7 +35,7 @@
  * if it has not already been created. To check if the module instance exists
  * without causing it to be created, use `hasInstance` instead.
  */
-@property (nonatomic, strong, readonly) id<RCTBridgeModule> instance;
+@property (nonatomic, strong, readonly) id<RJSBridgeModule> instance;
 
 /**
  * Returns the module method dispatch queue. Note that this will init both the

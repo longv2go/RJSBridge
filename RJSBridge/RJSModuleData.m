@@ -1,10 +1,10 @@
 
 
-#import "RCTModuleData.h"
+#import "RJSModuleData.h"
 
 #import "RJSBridge.h"
-#import "RCTModuleMethod.h"
-#import "RCTUtils.h"
+#import "RJSModuleMethod.h"
+#import "RJSUtils.h"
 
 #import <objc/runtime.h>
 
@@ -23,7 +23,7 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
     }
 }
 
-@implementation RCTModuleData
+@implementation RJSModuleData
 {
   NSString *_queueName;
   __weak RJSBridge *_bridge;
@@ -50,7 +50,7 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
   return self;
 }
 
-- (instancetype)initWithModuleInstance:(id<RCTBridgeModule>)instance
+- (instancetype)initWithModuleInstance:(id<RJSBridgeModule>)instance
                                 bridge:(RJSBridge *)bridge
 {
   if ((self = [self initWithModuleClass:[instance class] bridge:bridge])) {
@@ -121,7 +121,7 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
   return _instance != nil;
 }
 
-- (id<RCTBridgeModule>)instance
+- (id<RJSBridgeModule>)instance
 {
   [_instanceLock lock];
   if (!_setupComplete) {
@@ -144,10 +144,10 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
   return RCTBridgeModuleNameForClass(_moduleClass);
 }
 
-- (NSArray<id<RCTBridgeMethod>> *)methods
+- (NSArray<id<RJSBridgeMethod>> *)methods
 {
   if (!_methods) {
-    NSMutableArray<id<RCTBridgeMethod>> *moduleMethods = [NSMutableArray new];
+    NSMutableArray<id<RJSBridgeMethod>> *moduleMethods = [NSMutableArray new];
 
     if ([_moduleClass instancesRespondToSelector:@selector(methodsToExport)]) {
       [self instance];
@@ -164,8 +164,8 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
         IMP imp = method_getImplementation(method);
         NSArray<NSString *> *entries =
           ((NSArray<NSString *> *(*)(id, SEL))imp)(_moduleClass, selector);
-        id<RCTBridgeMethod> moduleMethod =
-          [[RCTModuleMethod alloc] initWithMethodSignature:entries[1]
+        id<RJSBridgeMethod> moduleMethod =
+          [[RJSModuleMethod alloc] initWithMethodSignature:entries[1]
                                               JSMethodName:entries[0]
                                                moduleClass:_moduleClass];
 
@@ -196,7 +196,7 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
 
   NSMutableArray<NSString *> *methods = self.methods.count ? [NSMutableArray new] : nil;
   NSMutableArray<NSNumber *> *asyncMethods = nil;
-  for (id<RCTBridgeMethod> method in self.methods) {
+  for (id<RJSBridgeMethod> method in self.methods) {
     if (method.functionType == RCTFunctionTypePromise) {
       if (!asyncMethods) {
         asyncMethods = [NSMutableArray new];

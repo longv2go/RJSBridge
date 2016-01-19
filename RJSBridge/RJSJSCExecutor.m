@@ -4,15 +4,15 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import "RCTJSCExecutor.h"
+#import "RJSJSCExecutor.h"
 
 #import <pthread.h>
 
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <UIKit/UIDevice.h>
 
-#import "RCTDefines.h"
-#import "RCTUtils.h"
+#import "RJSDefines.h"
+#import "RJSUtils.h"
 
 static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnabled";
 
@@ -72,7 +72,7 @@ static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnable
 
 @end
 
-@implementation RCTJSCExecutor
+@implementation RJSJSCExecutor
 {
   RCTJavaScriptContext *_context;
   NSThread *_javaScriptThread;
@@ -150,9 +150,9 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
     
     _valid = YES;
     _javaScriptThread = javaScriptThread;
-    __weak RCTJSCExecutor *weakSelf = self;
+    __weak RJSJSCExecutor *weakSelf = self;
     [self executeBlockOnJavaScriptQueue: ^{
-      RCTJSCExecutor *strongSelf = weakSelf;
+      RJSJSCExecutor *strongSelf = weakSelf;
       if (!strongSelf) {
         return;
       }
@@ -186,7 +186,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 
 - (void)addSynchronousHookWithName:(NSString *)name usingBlock:(id)block
 {
-  __weak RCTJSCExecutor *weakSelf = self;
+  __weak RJSJSCExecutor *weakSelf = self;
   [self executeBlockOnJavaScriptQueue:^{
     weakSelf.context.context[name] = block;
   }];
@@ -194,7 +194,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 
 - (void)setUp
 {
-  __weak RCTJSCExecutor *weakSelf = self;
+  __weak RJSJSCExecutor *weakSelf = self;
   [self addSynchronousHookWithName:@"noop" usingBlock:^{}];
 
 //  [self addSynchronousHookWithName:@"nativeLoggingHook" usingBlock:^(NSString *message, NSNumber *logLevel) {
@@ -207,7 +207,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 //  }];
 
   [self addSynchronousHookWithName:@"nativeRequireModuleConfig" usingBlock:^NSString *(NSString *moduleName) {
-    RCTJSCExecutor *strongSelf = weakSelf;
+    RJSJSCExecutor *strongSelf = weakSelf;
     if (!strongSelf.valid) {
       return nil;
     }
@@ -221,7 +221,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
   }];
 
   [self addSynchronousHookWithName:@"nativeFlushQueueImmediate" usingBlock:^(NSArray<NSArray *> *calls){
-    RCTJSCExecutor *strongSelf = weakSelf;
+    RJSJSCExecutor *strongSelf = weakSelf;
     if (!strongSelf.valid || !calls) {
       return;
     }
@@ -288,9 +288,9 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
               callback:(RCTJavaScriptCallback)onComplete
 {
   NSAssert(onComplete != nil, @"onComplete block should not be nil");
-  __weak RCTJSCExecutor *weakSelf = self;
+  __weak RJSJSCExecutor *weakSelf = self;
   [self executeBlockOnJavaScriptQueue:^{
-    RCTJSCExecutor *strongSelf = weakSelf;
+    RJSJSCExecutor *strongSelf = weakSelf;
     if (!strongSelf || !strongSelf.isValid) {
       return;
     }
@@ -395,9 +395,9 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 {
   NSAssert(script, @"");
 
-  __weak RCTJSCExecutor *weakSelf = self;
+  __weak RJSJSCExecutor *weakSelf = self;
   [self executeBlockOnJavaScriptQueue:^{
-    RCTJSCExecutor *strongSelf = weakSelf;
+    RJSJSCExecutor *strongSelf = weakSelf;
     if (!strongSelf || !strongSelf.isValid) {
       return;
     }
@@ -464,9 +464,9 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
     NSAssert(RCTJSONParse(script, NULL) != nil, @"%@ wasn't valid JSON!", script);
   }
 
-  __weak RCTJSCExecutor *weakSelf = self;
+  __weak RJSJSCExecutor *weakSelf = self;
   [self executeBlockOnJavaScriptQueue:^{
-    RCTJSCExecutor *strongSelf = weakSelf;
+    RJSJSCExecutor *strongSelf = weakSelf;
     if (!strongSelf || !strongSelf.isValid) {
       return;
     }

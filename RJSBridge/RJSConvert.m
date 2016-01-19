@@ -4,15 +4,15 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import "RCTConvert.h"
+#import "RJSConvert.h"
 
 #import <objc/message.h>
 
 #import "RCTDefines.h"
-#import "RCTParserUtils.h"
-#import "RCTUtils.h"
+#import "RJSParserUtils.h"
+#import "RJSUtils.h"
 
-@implementation RCTConvert
+@implementation RJSConvert
 
 RCT_CONVERTER(id, id, self)
 
@@ -212,7 +212,7 @@ static void RCTConvertCGStructValue(const char *type, NSArray *fields, NSDiction
       NSLog(@"Expected array with count %zd, but count is %zd: %@", count, [json count], json);
     } else {
       for (NSUInteger i = 0; i < count; i++) {
-        result[i] = [RCTConvert CGFloat:json[i]];
+        result[i] = [RJSConvert CGFloat:json[i]];
       }
     }
   } else if ([json isKindOfClass:[NSDictionary class]]) {
@@ -228,7 +228,7 @@ static void RCTConvertCGStructValue(const char *type, NSArray *fields, NSDiction
       }
     }
     for (NSUInteger i = 0; i < count; i++) {
-      result[i] = [RCTConvert CGFloat:json[fields[i]]];
+      result[i] = [RJSConvert CGFloat:json[fields[i]]];
     }
   } else if (json) {
     RCTLogConvertError(json, @(type));
@@ -532,9 +532,9 @@ static BOOL RCTFontIsCondensed(UIFont *font)
 NSArray *RCTConvertArrayValue(SEL type, id json)
 {
   __block BOOL copy = NO;
-  __block NSArray *values = json = [RCTConvert NSArray:json];
+  __block NSArray *values = json = [RJSConvert NSArray:json];
   [json enumerateObjectsUsingBlock:^(id jsonValue, NSUInteger idx, __unused BOOL *stop) {
-    id value = ((id(*)(Class, SEL, id))objc_msgSend)([RCTConvert class], type, jsonValue);
+    id value = ((id(*)(Class, SEL, id))objc_msgSend)([RJSConvert class], type, jsonValue);
     if (copy) {
       if (value) {
         [(NSMutableArray *)values addObject:value];

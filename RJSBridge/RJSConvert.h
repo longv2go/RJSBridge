@@ -15,7 +15,7 @@
  * JSON objects to native types and classes. These are useful when writing
  * custom RCTViewManager setter methods.
  */
-@interface RCTConvert : NSObject
+@interface RJSConvert : NSObject
 
 + (id)id:(id)json;
 

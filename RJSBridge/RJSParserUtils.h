@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RCTParserUtils : NSObject
+@interface RJSParserUtils : NSObject
 
 /**
  * Generic utility functions for parsing Objective-C source code.

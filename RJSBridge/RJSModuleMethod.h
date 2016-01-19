@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RCTBridgeMethod.h"
+#import "RJSBridgeMethod.h"
 
 @class RJSBridge;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface RCTModuleMethod : NSObject <RCTBridgeMethod>
+@interface RJSModuleMethod : NSObject <RJSBridgeMethod>
 
 @property (nonatomic, readonly) Class moduleClass;
 @property (nonatomic, readonly) SEL selector;

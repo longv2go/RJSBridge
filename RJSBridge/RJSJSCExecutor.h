@@ -6,12 +6,12 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
-#import "RCTJavaScriptExecutor.h"
+#import "RJSJavaScriptExecutor.h"
 
 /**
  * Uses a JavaScriptCore context as the execution engine.
  */
-@interface RCTJSCExecutor : NSObject <RCTJavaScriptExecutor>
+@interface RJSJSCExecutor : NSObject <RJSJavaScriptExecutor>
 
 @property (nonatomic, weak) RJSBridge *bridge;
 

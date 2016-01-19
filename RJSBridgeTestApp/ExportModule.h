@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RJSBridge.h"
-#import "RCTBridgeModule.h"
+#import "RJSBridgeModule.h"
 
-@interface ExportModule : NSObject<RCTBridgeModule>
+@interface ExportModule : NSObject<RJSBridgeModule>
 
 @end

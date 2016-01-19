@@ -9,7 +9,7 @@
 #import "RCTDefines.h"
 #import "RJSBridge.h"
 
-@protocol RCTBridgeMethod;
+@protocol RJSBridgeMethod;
 
 /**
  * The type of a block that is capable of sending a response to a bridged
@@ -49,7 +49,7 @@ extern dispatch_queue_t RCTJSThread;
 /**
  * Provides the interface needed to register a bridge module.
  */
-@protocol RCTBridgeModule <NSObject>
+@protocol RJSBridgeModule <NSObject>
 
 /**
  * Place this macro in your class implementation to automatically register
@@ -216,7 +216,7 @@ RCT_EXTERN void RCTRegisterModule(Class); \
  * methods defined using the macros above.  This method is called only once,
  * before registration.
  */
-- (NSArray<id<RCTBridgeMethod>> *)methodsToExport;
+- (NSArray<id<RJSBridgeMethod>> *)methodsToExport;
 
 /**
  * Injects constants into JS. These constants are made accessible via

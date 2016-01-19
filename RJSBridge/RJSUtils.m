@@ -1,5 +1,5 @@
 
-#import "RCTUtils.h"
+#import "RJSUtils.h"
 #include <objc/runtime.h>
 
 NSString *const RCTErrorDomain = @"RCTErrorDomain";

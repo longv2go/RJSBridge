@@ -4,13 +4,13 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import "RCTModuleMethod.h"
+#import "RJSModuleMethod.h"
 
 #import <objc/message.h>
-#import "RCTParserUtils.h"
+#import "RJSParserUtils.h"
 #import "RCTDefines.h"
-#import "RCTConvert.h"
-#import "RCTUtils.h"
+#import "RJSConvert.h"
+#import "RJSUtils.h"
 #import "RJSBridge.h"
 
 
@@ -32,7 +32,7 @@ typedef BOOL (^RCTArgumentBlock)(RJSBridge *, NSUInteger, id);
 
 @end
 
-@implementation RCTModuleMethod
+@implementation RJSModuleMethod
 {
   Class _moduleClass;
   NSInvocation *_invocation;
@@ -45,7 +45,7 @@ typedef BOOL (^RCTArgumentBlock)(RJSBridge *, NSUInteger, id);
 @synthesize JSMethodName = _JSMethodName;
 @synthesize functionType = _functionType;
 
-static void RCTLogArgumentError(RCTModuleMethod *method, NSUInteger index,
+static void RCTLogArgumentError(RJSModuleMethod *method, NSUInteger index,
                                 id valueOrType, const char *issue)
 {
 //  RCTLogError(@"Argument %tu (%@) of %@.%@ %s", index, valueOrType,
@@ -195,7 +195,7 @@ SEL RCTParseMethodSignature(NSString *methodSignature, NSArray<RCTMethodArgument
   id value = json ? [block copy] : (id)^(__unused NSArray *_){}; \
   CFBridgingRetain(value)
 
-  __weak RCTModuleMethod *weakSelf = self;
+  __weak RJSModuleMethod *weakSelf = self;
   void (^addBlockArgument)(void) = ^{
     RCT_ARG_BLOCK(
 
@@ -216,13 +216,13 @@ SEL RCTParseMethodSignature(NSString *methodSignature, NSArray<RCTMethodArgument
     RCTMethodArgument *argument = arguments[i - 2];
     NSString *typeName = argument.type;
     SEL selector = RCTConvertSelectorForType(typeName);
-    if ([RCTConvert respondsToSelector:selector]) {
+    if ([RJSConvert respondsToSelector:selector]) {
       switch (objcType[0]) {
 
 #define RCT_CASE(_value, _type) \
         case _value: { \
           _type (*convert)(id, SEL, id) = (typeof(convert))objc_msgSend; \
-          RCT_ARG_BLOCK( _type value = convert([RCTConvert class], selector, json); ) \
+          RCT_ARG_BLOCK( _type value = convert([RJSConvert class], selector, json); ) \
           break; \
         }
 
@@ -244,7 +244,7 @@ SEL RCTParseMethodSignature(NSString *methodSignature, NSArray<RCTMethodArgument
         case _value: { \
           isNullableType = YES; \
           _type (*convert)(id, SEL, id) = (typeof(convert))objc_msgSend; \
-          RCT_ARG_BLOCK( _type value = convert([RCTConvert class], selector, json); ) \
+          RCT_ARG_BLOCK( _type value = convert([RJSConvert class], selector, json); ) \
           break; \
         }
 
@@ -256,7 +256,7 @@ SEL RCTParseMethodSignature(NSString *methodSignature, NSArray<RCTMethodArgument
           isNullableType = YES;
           id (*convert)(id, SEL, id) = (typeof(convert))objc_msgSend;
           RCT_ARG_BLOCK(
-            id value = convert([RCTConvert class], selector, json);
+            id value = convert([RJSConvert class], selector, json);
             CFBridgingRetain(value);
           )
           break;
@@ -264,10 +264,10 @@ SEL RCTParseMethodSignature(NSString *methodSignature, NSArray<RCTMethodArgument
 
         case _C_STRUCT_B: {
 
-          NSMethodSignature *typeSignature = [RCTConvert methodSignatureForSelector:selector];
+          NSMethodSignature *typeSignature = [RJSConvert methodSignatureForSelector:selector];
           NSInvocation *typeInvocation = [NSInvocation invocationWithMethodSignature:typeSignature];
           typeInvocation.selector = selector;
-          typeInvocation.target = [RCTConvert class];
+          typeInvocation.target = [RJSConvert class];
 
           [argumentBlocks addObject:^(__unused RJSBridge *bridge, NSUInteger index, id json) {
             void *returnValue = malloc(typeSignature.methodReturnLength);

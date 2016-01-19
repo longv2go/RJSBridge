@@ -8,12 +8,12 @@
 
 #import "RJSBridge.h"
 #import "RJSDefines.h"
-#import "RCTBridgeModule.h"
-#import "RCTModuleData.h"
-#import "RCTJSCExecutor.h"
-#import "RCTConvert.h"
-#import "RCTModuleMethod.h"
-#import "RCTUtils.h"
+#import "RJSBridgeModule.h"
+#import "RJSModuleData.h"
+#import "RJSJSCExecutor.h"
+#import "RJSConvert.h"
+#import "RJSModuleMethod.h"
+#import "RJSUtils.h"
 
 #define RCTAssertJSThread() \
 NSAssert(![NSStringFromClass([_javaScriptExecutor class]) isEqualToString:@"RCTJSCExecutor"] || \
@@ -48,7 +48,7 @@ void RCTRegisterModule(Class moduleClass)
     RCTModuleClasses = [NSMutableArray new];
   });
   
-  assert([moduleClass conformsToProtocol:NSProtocolFromString(@"RCTBridgeModule")]);
+  assert([moduleClass conformsToProtocol:NSProtocolFromString(@"RJSBridgeModule")]);
   
   // Register module
   [RCTModuleClasses addObject:moduleClass];
@@ -66,11 +66,11 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 @interface RJSBridge()
 
 @property (nonatomic, strong) JSContext *context;
-@property (nonatomic, strong) NSArray<RCTModuleData *> *moduleDataByID;
-@property (nonatomic, strong) NSMutableDictionary<NSString *, RCTModuleData *> *moduleDataByName;
+@property (nonatomic, strong) NSArray<RJSModuleData *> *moduleDataByID;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, RJSModuleData *> *moduleDataByName;
 @property (nonatomic, strong) NSArray<Class> *moduleClassesByID;
 
-@property (nonatomic, strong) RCTJSCExecutor *javaScriptExecutor;
+@property (nonatomic, strong) RJSJSCExecutor *javaScriptExecutor;
 @end
 
 @implementation RJSBridge
@@ -164,7 +164,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 - (NSString *)moduleConfig
 {
   NSMutableArray<NSArray *> *config = [NSMutableArray new];
-  for (RCTModuleData *moduleData in _moduleDataByID) {
+  for (RJSModuleData *moduleData in _moduleDataByID) {
       [config addObject:@[moduleData.name]];
   }
   
@@ -182,15 +182,15 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 {
   RJSAssertMainThread();
   
-  NSMutableArray<RCTModuleData *> *moduleDataByID = [NSMutableArray new];
-  NSMutableDictionary<NSString *, RCTModuleData *> *moduleDataByName = [NSMutableDictionary new];
+  NSMutableArray<RJSModuleData *> *moduleDataByID = [NSMutableArray new];
+  NSMutableDictionary<NSString *, RJSModuleData *> *moduleDataByName = [NSMutableDictionary new];
   
   for (Class moduleClass in RCTGetModuleClasses()) {
     NSString *moduleName = RCTBridgeModuleNameForClass(moduleClass);
     id module = [[moduleClass alloc] init];
     
-    RCTModuleData *moduleData;
-    moduleData = [[RCTModuleData alloc] initWithModuleInstance:module
+    RJSModuleData *moduleData;
+    moduleData = [[RJSModuleData alloc] initWithModuleInstance:module
                                                         bridge:self];
     if (moduleData) {
       moduleDataByName[moduleName] = moduleData;
@@ -203,10 +203,10 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
   _moduleClassesByID = [moduleDataByID valueForKey:@"moduleClass"];
   
   // create executor
-  _javaScriptExecutor = [[RCTJSCExecutor alloc] initWithContext:_context];
+  _javaScriptExecutor = [[RJSJSCExecutor alloc] initWithContext:_context];
   [_javaScriptExecutor setBridge:self];
 
-  for (RCTModuleData *moduleData in _moduleDataByID) {
+  for (RJSModuleData *moduleData in _moduleDataByID) {
     if (moduleData.hasInstance) {
       [moduleData methodQueue]; // initialize the queue
     }
@@ -227,7 +227,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 
 - (NSArray *)configForModuleName:(NSString *)moduleName
 {
-  RCTModuleData *moduleData = _moduleDataByName[moduleName];
+  RJSModuleData *moduleData = _moduleDataByName[moduleName];
   if (moduleData) {
     return moduleData.config;
   }
@@ -248,16 +248,16 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 
 - (void)handleBuffer:(NSArray *)buffer
 {
-  NSArray *requestsArray = [RCTConvert NSArray:buffer];
+  NSArray *requestsArray = [RJSConvert NSArray:buffer];
   if (RCT_DEBUG && requestsArray.count <= RCTBridgeFieldParamss) {
     NSLog(@"Buffer should contain at least %tu sub-arrays. Only found %tu",
                 RCTBridgeFieldParamss + 1, requestsArray.count);
     return;
   }
   
-  NSArray<NSNumber *> *moduleIDs = [RCTConvert NSNumberArray:requestsArray[RCTBridgeFieldRequestModuleIDs]];
-  NSArray<NSNumber *> *methodIDs = [RCTConvert NSNumberArray:requestsArray[RCTBridgeFieldMethodIDs]];
-  NSArray<NSArray *> *paramsArrays = [RCTConvert NSArrayArray:requestsArray[RCTBridgeFieldParamss]];
+  NSArray<NSNumber *> *moduleIDs = [RJSConvert NSNumberArray:requestsArray[RCTBridgeFieldRequestModuleIDs]];
+  NSArray<NSNumber *> *methodIDs = [RJSConvert NSNumberArray:requestsArray[RCTBridgeFieldMethodIDs]];
+  NSArray<NSArray *> *paramsArrays = [RJSConvert NSArrayArray:requestsArray[RCTBridgeFieldParamss]];
   
   if (RCT_DEBUG && (moduleIDs.count != methodIDs.count || moduleIDs.count != paramsArrays.count)) {
     NSLog(@"Invalid data message - all must be length: %zd", moduleIDs.count);
@@ -269,7 +269,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
                                                       capacity:_moduleDataByName.count];
   
   [moduleIDs enumerateObjectsUsingBlock:^(NSNumber *moduleID, NSUInteger i, __unused BOOL *stop) {
-    RCTModuleData *moduleData = _moduleDataByID[moduleID.integerValue];
+    RJSModuleData *moduleData = _moduleDataByID[moduleID.integerValue];
     dispatch_queue_t queue = moduleData.methodQueue;
     NSMutableOrderedSet<NSNumber *> *set = [buckets objectForKey:queue];
     if (!set) {
@@ -305,7 +305,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 
 - (void)partialBatchDidFlush
 {
-  for (RCTModuleData *moduleData in _moduleDataByID) {
+  for (RJSModuleData *moduleData in _moduleDataByID) {
     if (moduleData.implementsPartialBatchDidFlush) {
       [self dispatchBlock:^{
         [moduleData.instance partialBatchDidFlush];
@@ -325,13 +325,13 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
     return NO;
   }
   
-  RCTModuleData *moduleData = _moduleDataByID[moduleID];
+  RJSModuleData *moduleData = _moduleDataByID[moduleID];
   if (RCT_DEBUG && !moduleData) {
     NSLog(@"No module found for id '%zd'", moduleID);
     return NO;
   }
   
-  id<RCTBridgeMethod> method = moduleData.methods[methodID];
+  id<RJSBridgeMethod> method = moduleData.methods[methodID];
   if (RCT_DEBUG && !method) {
     NSLog(@"Unknown methodID: %zd for module: %zd (%@)", methodID, moduleID, moduleData.name);
     return NO;
