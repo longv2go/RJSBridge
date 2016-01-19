@@ -218,7 +218,7 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
   static NSData *source = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    source = [NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/RJSBridge_aa.js", [[NSBundle mainBundle] bundlePath]]];
+    source = [NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/RJSBridge.js", [[NSBundle mainBundle] bundlePath]]];
   });
   
   return source;
