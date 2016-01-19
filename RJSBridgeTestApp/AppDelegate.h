@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  RJSBridge
+//  RJSBridgeTestApp
 //
-//  Created by didi on 16/1/12.
+//  Created by didi on 16/1/19.
 //  Copyright © 2016年 didi. All rights reserved.
 //
 

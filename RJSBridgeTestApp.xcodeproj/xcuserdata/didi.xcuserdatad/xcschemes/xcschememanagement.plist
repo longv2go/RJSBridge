@@ -7,22 +7,32 @@
 		<key>RJSBridge.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>RJSBridgeTestApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0AC5E0D11C44D8FC0009AD63</key>
+		<key>0AC5E1571C4E30520009AD63</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0AC5E0EA1C44D8FC0009AD63</key>
+		<key>0AC5E1701C4E30520009AD63</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0AC5E0F51C44D8FC0009AD63</key>
+		<key>0AC5E17B1C4E30520009AD63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0AC5E1911C4E30C60009AD63</key>
 		<dict>
 			<key>primary</key>
 			<true/>

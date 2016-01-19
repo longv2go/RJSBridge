@@ -1,18 +1,18 @@
 //
-//  RJSBridgeUITests.m
-//  RJSBridgeUITests
+//  RJSBridgeTestAppUITests.m
+//  RJSBridgeTestAppUITests
 //
-//  Created by didi on 16/1/12.
+//  Created by didi on 16/1/19.
 //  Copyright © 2016年 didi. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface RJSBridgeUITests : XCTestCase
+@interface RJSBridgeTestAppUITests : XCTestCase
 
 @end
 
-@implementation RJSBridgeUITests
+@implementation RJSBridgeTestAppUITests
 
 - (void)setUp {
     [super setUp];

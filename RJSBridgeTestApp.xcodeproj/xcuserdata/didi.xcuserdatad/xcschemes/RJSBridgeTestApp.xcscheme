@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AC5E0D11C44D8FC0009AD63"
-               BuildableName = "RJSBridge.app"
-               BlueprintName = "RJSBridge"
-               ReferencedContainer = "container:RJSBridge.xcodeproj">
+               BlueprintIdentifier = "0AC5E1571C4E30520009AD63"
+               BuildableName = "RJSBridgeTestApp.app"
+               BlueprintName = "RJSBridgeTestApp"
+               ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AC5E0EA1C44D8FC0009AD63"
-               BuildableName = "RJSBridgeTests.xctest"
-               BlueprintName = "RJSBridgeTests"
-               ReferencedContainer = "container:RJSBridge.xcodeproj">
+               BlueprintIdentifier = "0AC5E1701C4E30520009AD63"
+               BuildableName = "RJSBridgeTestAppTests.xctest"
+               BlueprintName = "RJSBridgeTestAppTests"
+               ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AC5E0F51C44D8FC0009AD63"
-               BuildableName = "RJSBridgeUITests.xctest"
-               BlueprintName = "RJSBridgeUITests"
-               ReferencedContainer = "container:RJSBridge.xcodeproj">
+               BlueprintIdentifier = "0AC5E17B1C4E30520009AD63"
+               BuildableName = "RJSBridgeTestAppUITests.xctest"
+               BlueprintName = "RJSBridgeTestAppUITests"
+               ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AC5E0D11C44D8FC0009AD63"
-            BuildableName = "RJSBridge.app"
-            BlueprintName = "RJSBridge"
-            ReferencedContainer = "container:RJSBridge.xcodeproj">
+            BlueprintIdentifier = "0AC5E1571C4E30520009AD63"
+            BuildableName = "RJSBridgeTestApp.app"
+            BlueprintName = "RJSBridgeTestApp"
+            ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AC5E0D11C44D8FC0009AD63"
-            BuildableName = "RJSBridge.app"
-            BlueprintName = "RJSBridge"
-            ReferencedContainer = "container:RJSBridge.xcodeproj">
+            BlueprintIdentifier = "0AC5E1571C4E30520009AD63"
+            BuildableName = "RJSBridgeTestApp.app"
+            BlueprintName = "RJSBridgeTestApp"
+            ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0AC5E0D11C44D8FC0009AD63"
-            BuildableName = "RJSBridge.app"
-            BlueprintName = "RJSBridge"
-            ReferencedContainer = "container:RJSBridge.xcodeproj">
+            BlueprintIdentifier = "0AC5E1571C4E30520009AD63"
+            BuildableName = "RJSBridgeTestApp.app"
+            BlueprintName = "RJSBridgeTestApp"
+            ReferencedContainer = "container:RJSBridgeTestApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
