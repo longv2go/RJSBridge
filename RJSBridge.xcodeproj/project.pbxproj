@@ -23,7 +23,7 @@
 		0AC5E1351C461E4C0009AD63 /* RCTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1341C461E4C0009AD63 /* RCTUtils.m */; };
 		0AC5E1381C46308E0009AD63 /* RCTJSCExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E1371C46308E0009AD63 /* RCTJSCExecutor.m */; };
 		0AC5E13E1C4CB82F0009AD63 /* ExportModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */; };
-		0AC5E14C1C4CCF650009AD63 /* RJSBridge_aa.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E14B1C4CCF650009AD63 /* RJSBridge_aa.js */; };
+		0AC5E14C1C4CCF650009AD63 /* RJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5E14B1C4CCF650009AD63 /* RJSBridge.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 		0AC5E1391C4630D70009AD63 /* RCTJavaScriptExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTJavaScriptExecutor.h; sourceTree = "<group>"; };
 		0AC5E13C1C4CB82F0009AD63 /* ExportModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportModule.h; sourceTree = "<group>"; };
 		0AC5E13D1C4CB82F0009AD63 /* ExportModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportModule.m; sourceTree = "<group>"; };
-		0AC5E14B1C4CCF650009AD63 /* RJSBridge_aa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge_aa.js; sourceTree = "<group>"; };
+		0AC5E14B1C4CCF650009AD63 /* RJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +196,7 @@
 				0AC5E1181C44EF490009AD63 /* RJSDefines.h */,
 				0AC5E1091C44D96B0009AD63 /* RJSBridge.h */,
 				0AC5E10A1C44D96B0009AD63 /* RJSBridge.m */,
-				0AC5E14B1C4CCF650009AD63 /* RJSBridge_aa.js */,
+				0AC5E14B1C4CCF650009AD63 /* RJSBridge.js */,
 			);
 			name = Bridge;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				0AC5E0E51C44D8FC0009AD63 /* LaunchScreen.storyboard in Resources */,
 				0AC5E0E21C44D8FC0009AD63 /* Assets.xcassets in Resources */,
 				0AC5E0E01C44D8FC0009AD63 /* Main.storyboard in Resources */,
-				0AC5E14C1C4CCF650009AD63 /* RJSBridge_aa.js in Resources */,
+				0AC5E14C1C4CCF650009AD63 /* RJSBridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +566,7 @@
 				0AC5E1011C44D8FC0009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC5E1021C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeTests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +575,7 @@
 				0AC5E1041C44D8FC0009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC5E1051C44D8FC0009AD63 /* Build configuration list for PBXNativeTarget "RJSBridgeUITests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +584,7 @@
 				0AC5E1071C44D8FC0009AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
