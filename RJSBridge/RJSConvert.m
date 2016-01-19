@@ -8,7 +8,7 @@
 
 #import <objc/message.h>
 
-#import "RCTDefines.h"
+#import "RJSDefines.h"
 #import "RJSParserUtils.h"
 #import "RJSUtils.h"
 

@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "RCTDefines.h"
+#import "RJSDefines.h"
 
 extern NSString *const RCTErrorDomain;
 extern NSString *const RCTFatalExceptionName;

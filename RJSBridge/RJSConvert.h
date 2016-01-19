@@ -7,7 +7,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-#import "RCTDefines.h"
+#import "RJSDefines.h"
 
 
 /**

@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A6B571B1C4E3ADC0067808A /* RJSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
 		0AC5E1581C4E30520009AD63 /* RJSBridgeTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RJSBridgeTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC5E15C1C4E30520009AD63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AC5E15E1C4E30520009AD63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		0AC5E19C1C4E30F10009AD63 /* RJSBridgeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridgeModule.h; sourceTree = "<group>"; };
 		0AC5E19D1C4E30F10009AD63 /* RJSConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSConvert.h; sourceTree = "<group>"; };
 		0AC5E19E1C4E30F10009AD63 /* RJSConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSConvert.m; sourceTree = "<group>"; };
-		0AC5E19F1C4E30F10009AD63 /* RJSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
 		0AC5E1A01C4E30F10009AD63 /* RJSJavaScriptExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSJavaScriptExecutor.h; sourceTree = "<group>"; };
 		0AC5E1A11C4E30F10009AD63 /* RJSJSCExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSJSCExecutor.h; sourceTree = "<group>"; };
 		0AC5E1A21C4E30F10009AD63 /* RJSJSCExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSJSCExecutor.m; sourceTree = "<group>"; };
@@ -97,7 +97,6 @@
 		0AC5E1A91C4E30F10009AD63 /* RJSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSUtils.h; sourceTree = "<group>"; };
 		0AC5E1AA1C4E30F10009AD63 /* RJSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSUtils.m; sourceTree = "<group>"; };
 		0AC5E1AB1C4E30F10009AD63 /* RJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RJSBridge.js; sourceTree = "<group>"; };
-		0AC5E1AC1C4E30F10009AD63 /* RJSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSDefines.h; sourceTree = "<group>"; };
 		0AC5E1B31C4E310D0009AD63 /* RJSBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJSBridge.h; sourceTree = "<group>"; };
 		0AC5E1B41C4E310D0009AD63 /* RJSBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJSBridge.m; sourceTree = "<group>"; };
 		0AC5E1B81C4E316B0009AD63 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -210,11 +209,11 @@
 		0AC5E1931C4E30C60009AD63 /* RJSBridge */ = {
 			isa = PBXGroup;
 			children = (
+				0A6B571B1C4E3ADC0067808A /* RJSDefines.h */,
 				0AC5E19B1C4E30F00009AD63 /* RJSBridgeMethod.h */,
 				0AC5E19C1C4E30F10009AD63 /* RJSBridgeModule.h */,
 				0AC5E19D1C4E30F10009AD63 /* RJSConvert.h */,
 				0AC5E19E1C4E30F10009AD63 /* RJSConvert.m */,
-				0AC5E19F1C4E30F10009AD63 /* RJSDefines.h */,
 				0AC5E1A01C4E30F10009AD63 /* RJSJavaScriptExecutor.h */,
 				0AC5E1A11C4E30F10009AD63 /* RJSJSCExecutor.h */,
 				0AC5E1A21C4E30F10009AD63 /* RJSJSCExecutor.m */,
@@ -227,7 +226,6 @@
 				0AC5E1A91C4E30F10009AD63 /* RJSUtils.h */,
 				0AC5E1AA1C4E30F10009AD63 /* RJSUtils.m */,
 				0AC5E1AB1C4E30F10009AD63 /* RJSBridge.js */,
-				0AC5E1AC1C4E30F10009AD63 /* RJSDefines.h */,
 				0AC5E1B31C4E310D0009AD63 /* RJSBridge.h */,
 				0AC5E1B41C4E310D0009AD63 /* RJSBridge.m */,
 			);

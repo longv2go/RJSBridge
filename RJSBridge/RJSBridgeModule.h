@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RCTDefines.h"
+#import "RJSDefines.h"
 #import "RJSBridge.h"
 
 @protocol RJSBridgeMethod;
