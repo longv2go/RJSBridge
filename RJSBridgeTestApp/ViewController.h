@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RJSModuleData.h"
 
 @interface ViewController : UIViewController
 

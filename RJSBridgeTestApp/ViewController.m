@@ -9,12 +9,19 @@
 #import "ViewController.h"
 #import "RJSBridge.h"
 
-@interface ViewController ()<UIWebViewDelegate>
+@interface ViewController ()<UIWebViewDelegate, RJSBridgeModule>
 @property(nonatomic, strong) UIWebView *webView;
 @property(nonatomic, strong) RJSBridge *bridge;
 @end
 
 @implementation ViewController
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(hello:(NSString *)world)
+{
+  NSLog(@"%@", world);
+}
+
 
 - (void)viewDidLoad {
   [super viewDidLoad];

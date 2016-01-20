@@ -9,6 +9,10 @@
 #import "ExportModule.h"
 #import "RJSBridge.h"
 
+@interface ExportModule()<RJSBridgeModule>
+
+@end
+
 @implementation ExportModule
 RCT_EXPORT_MODULE();
 
