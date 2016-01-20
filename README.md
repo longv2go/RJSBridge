@@ -11,7 +11,7 @@ RJSBridge.js的代码主要来自MessageQueue.js, BatchedBridge.js和NativeModul
 
 暴漏一个类，需要引入RJSBridgeModule协议，代码如下
 
-```object-c
+```objc
 @interface ExportModule()<RJSBridgeModule>
 
 @end
