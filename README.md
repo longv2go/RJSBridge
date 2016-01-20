@@ -9,7 +9,8 @@ RJSBridge.js的代码主要来自MessageQueue.js, BatchedBridge.js和NativeModul
 #暴漏本地类给JS
 
 暴漏一个类，需要引入RJSBridgeModule协议，代码如下
-```objc
+
+```
 @interface ExportModule()<RJSBridgeModule>
 
 @end
@@ -31,8 +32,8 @@ RCT_EXPORT_METHOD(call:(NSString *)hi back:(RCTResponseSenderBlock)back)
 @end
 ```
 
-调用
-```javascript
+JS调用Native方法
+
+```
 _rjs.ExportModule.hello('this is test');
 ```
-
