@@ -17,7 +17,7 @@ typedef void (^RCTJavaScriptCallback)(id json, NSError *error);
  * Abstracts away a JavaScript execution context - we may be running code in a
  * web view (for debugging purposes), or may be running code in a `JSContext`.
  */
-@protocol RJSJavaScriptExecutor <RJSBridgeModule>
+@protocol RJSJavaScriptExecutor
 
 /**
  * Used to set up the executor after the bridge has been fully initialized.

@@ -49,19 +49,6 @@ typedef NSURL RCTFileURL;
 + (NSTimeZone *)NSTimeZone:(id)json;
 + (NSTimeInterval)NSTimeInterval:(id)json;
 
-+ (NSLineBreakMode)NSLineBreakMode:(id)json;
-+ (NSTextAlignment)NSTextAlignment:(id)json;
-+ (NSUnderlineStyle)NSUnderlineStyle:(id)json;
-+ (NSWritingDirection)NSWritingDirection:(id)json;
-+ (UITextAutocapitalizationType)UITextAutocapitalizationType:(id)json;
-+ (UITextFieldViewMode)UITextFieldViewMode:(id)json;
-+ (UIKeyboardType)UIKeyboardType:(id)json;
-+ (UIKeyboardAppearance)UIKeyboardAppearance:(id)json;
-+ (UIReturnKeyType)UIReturnKeyType:(id)json;
-
-+ (UIViewContentMode)UIViewContentMode:(id)json;
-+ (UIBarStyle)UIBarStyle:(id)json;
-
 + (CGFloat)CGFloat:(id)json;
 + (CGPoint)CGPoint:(id)json;
 + (CGSize)CGSize:(id)json;

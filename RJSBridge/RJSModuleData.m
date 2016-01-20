@@ -79,7 +79,7 @@ void RCTExecuteOnMainThread(dispatch_block_t block, BOOL sync)
 - (void)setUpMethodQueue
 {
   if (!_methodQueue) {
-    NSAssert(_instance, @"setUpMethodQueue called before %@ initialized");
+    NSAssert(_instance, @"setUpMethodQueue called before initialized");
     BOOL implementsMethodQueue = [_instance respondsToSelector:@selector(methodQueue)];
     if (implementsMethodQueue) {
       _methodQueue = _instance.methodQueue;

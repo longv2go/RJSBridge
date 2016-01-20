@@ -28,7 +28,7 @@
 - (instancetype)initWithJavaScriptThread:(NSThread *)javaScriptThread
                         globalContextRef:(JSGlobalContextRef)contextRef;
 
-- (instancetype)initWithContext:(JSContext *)context NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithContext:(JSContext *)context;
 
 
 - (void)executeApplicationScript:(NSData *)script

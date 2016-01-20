@@ -16,7 +16,7 @@
 
 static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnabled";
 
-@interface RCTJavaScriptContext : NSObject
+@interface RJSJavaScriptContext : NSObject
 
 @property (nonatomic, strong, readonly) JSContext *context;
 @property (nonatomic, assign, readonly) JSGlobalContextRef ctx;
@@ -25,9 +25,9 @@ static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnable
 
 @end
 
-@implementation RCTJavaScriptContext
+@implementation RJSJavaScriptContext
 {
-  RCTJavaScriptContext *_selfReference;
+  RJSJavaScriptContext *_selfReference;
 }
 
 - (instancetype)initWithJSContext:(JSContext *)context
@@ -74,7 +74,7 @@ static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnable
 
 @implementation RJSJSCExecutor
 {
-  RCTJavaScriptContext *_context;
+  RJSJavaScriptContext *_context;
   NSThread *_javaScriptThread;
   NSURL *_bundleURL;
 }
@@ -130,24 +130,10 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
   }
 }
 
-- (instancetype)initWithContext:(JSContext *)context
-{
-  if ((self = [super init])) {
-    
-    NSThread *javaScriptThread = [[NSThread alloc] initWithTarget:[self class]
-                                                         selector:@selector(runRunLoopThread)
-                                                           object:nil];
-    javaScriptThread.name = @"com.facebook.React.JavaScript";
-    
-    if ([javaScriptThread respondsToSelector:@selector(setQualityOfService:)]) {
-      [javaScriptThread setQualityOfService:NSOperationQualityOfServiceUserInteractive];
-    } else {
-      javaScriptThread.threadPriority = [NSThread mainThread].threadPriority;
-    }
-    
-    [javaScriptThread start];
 
-    
+- (instancetype)initWithJavaScriptThread:(NSThread *)javaScriptThread context:(JSContext *)context
+{
+  if (self = [super init]) {
     _valid = YES;
     _javaScriptThread = javaScriptThread;
     __weak RJSJSCExecutor *weakSelf = self;
@@ -158,12 +144,29 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
       }
       // Assumes that no other JS tasks are scheduled before.
       if (context) {
-        strongSelf->_context = [[RCTJavaScriptContext alloc] initWithJSContext:context];
+        strongSelf->_context = [[RJSJavaScriptContext alloc] initWithJSContext:context];
       }
     }];
   }
-
   return self;
+}
+
+- (instancetype)initWithContext:(JSContext *)context
+{
+    
+  NSThread *javaScriptThread = [[NSThread alloc] initWithTarget:[self class]
+                                                       selector:@selector(runRunLoopThread)
+                                                         object:nil];
+  javaScriptThread.name = @"com.facebook.React.JavaScript";
+  
+  if ([javaScriptThread respondsToSelector:@selector(setQualityOfService:)]) {
+    [javaScriptThread setQualityOfService:NSOperationQualityOfServiceUserInteractive];
+  } else {
+    javaScriptThread.threadPriority = [NSThread mainThread].threadPriority;
+  }
+  
+  [javaScriptThread start];
+  return [self initWithJavaScriptThread:javaScriptThread context:context];
 }
 
 - (instancetype)initWithJavaScriptThread:(NSThread *)javaScriptThread
@@ -173,7 +176,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
   return [self initWithJavaScriptThread:javaScriptThread context:context];
 }
 
-- (RCTJavaScriptContext *)context
+- (RJSJavaScriptContext *)context
 {
   NSAssert(_javaScriptThread, @"Must be called on JS thread.");
 
