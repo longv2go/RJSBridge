@@ -11,6 +11,44 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function ToObject(val) {
+  if (val == null) {
+    throw new TypeError('Object.assign cannot be called with null or undefined');
+  }
+
+  return Object(val);
+}
+
+function ownEnumerableKeys(obj) {
+  var keys = Object.getOwnPropertyNames(obj);
+
+  if (Object.getOwnPropertySymbols) {
+    keys = keys.concat(Object.getOwnPropertySymbols(obj));
+  }
+
+  return keys.filter(function (key) {
+    return propIsEnumerable.call(obj, key);
+  });
+}
+
+Object.assign = Object.assign || function (target, source) {
+  var from;
+  var keys;
+  var to = ToObject(target);
+
+  for (var s = 1; s < arguments.length; s++) {
+    from = arguments[s];
+    keys = ownEnumerableKeys(Object(from));
+
+    for (var i = 0; i < keys.length; i++) {
+      to[keys[i]] = from[keys[i]];
+    }
+  }
+
+  return to;
+};
+
 var __DEV__ = false;
 
 var invariant = function invariant(condition, format, a, b, c, d, e, f) {

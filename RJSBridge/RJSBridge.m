@@ -237,7 +237,6 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 
 - (void)handleBuffer:(id)buffer batchEnded:(BOOL)batchEnded
 {
-  RCTAssertJSThread();
   
   if (buffer != nil && buffer != (id)kCFNull) {
     _wasBatchActive = YES;
@@ -397,8 +396,6 @@ NSString *RCTBridgeModuleNameForClass(Class cls)
 - (void)_actuallyInvokeCallback:(NSNumber *)cbID
                       arguments:(NSArray *)args
 {
-  RCTAssertJSThread();
-  
   RCTJavaScriptCallback processResponse = ^(id json, NSError *error) {
     NSAssert(!error, @"");
     

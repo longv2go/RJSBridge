@@ -14,6 +14,11 @@
 #import "RJSDefines.h"
 #import "RJSUtils.h"
 
+#include <dlfcn.h>
+static void (*WebThreadRun)(void (^block)());
+typedef void (*WebThreadRunType)(void (^block)());
+
+
 static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnabled";
 
 @interface RJSJavaScriptContext : NSObject
@@ -75,7 +80,6 @@ static NSString *const RCTJSCProfilerEnabledDefaultsKey = @"RCTJSCProfilerEnable
 @implementation RJSJSCExecutor
 {
   RJSJavaScriptContext *_context;
-  NSThread *_javaScriptThread;
   NSURL *_bundleURL;
 }
 
@@ -130,12 +134,16 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
   }
 }
 
-
-- (instancetype)initWithJavaScriptThread:(NSThread *)javaScriptThread context:(JSContext *)context
+- (instancetype)initWithContext:(JSContext *)context
 {
+  
+  if (WebThreadRun == NULL) {
+    void *handler = dlopen("/System/Library/PrivateFrameworks/WebCore.framework/WebCore", RTLD_LAZY);
+    WebThreadRun = dlsym(handler, "WebThreadRun");
+  }
+  
   if (self = [super init]) {
     _valid = YES;
-    _javaScriptThread = javaScriptThread;
     __weak RJSJSCExecutor *weakSelf = self;
     [self executeBlockOnJavaScriptQueue: ^{
       RJSJSCExecutor *strongSelf = weakSelf;
@@ -148,25 +156,8 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
       }
     }];
   }
+  
   return self;
-}
-
-- (instancetype)initWithContext:(JSContext *)context
-{
-    
-  NSThread *javaScriptThread = [[NSThread alloc] initWithTarget:[self class]
-                                                       selector:@selector(runRunLoopThread)
-                                                         object:nil];
-  javaScriptThread.name = @"com.facebook.React.JavaScript";
-  
-  if ([javaScriptThread respondsToSelector:@selector(setQualityOfService:)]) {
-    [javaScriptThread setQualityOfService:NSOperationQualityOfServiceUserInteractive];
-  } else {
-    javaScriptThread.threadPriority = [NSThread mainThread].threadPriority;
-  }
-  
-  [javaScriptThread start];
-  return [self initWithJavaScriptThread:javaScriptThread context:context];
 }
 
 - (instancetype)initWithJavaScriptThread:(NSThread *)javaScriptThread
@@ -178,8 +169,6 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 
 - (RJSJavaScriptContext *)context
 {
-  NSAssert(_javaScriptThread, @"Must be called on JS thread.");
-
   if (!self.isValid) {
     return nil;
   }
@@ -251,10 +240,7 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 #endif
 
-  [_context performSelector:@selector(invalidate)
-                   onThread:_javaScriptThread
-                 withObject:nil
-              waitUntilDone:NO];
+  [_context invalidate];
   _context = nil;
 }
 
@@ -438,20 +424,24 @@ static NSError *RCTNSErrorFromJSError(JSContextRef context, JSValueRef jsError)
 
 - (void)executeBlockOnJavaScriptQueue:(dispatch_block_t)block
 {
-  if ([NSThread currentThread] != _javaScriptThread) {
-    [self performSelector:@selector(executeBlockOnJavaScriptQueue:)
-                 onThread:_javaScriptThread withObject:block waitUntilDone:NO];
-  } else {
+  [self executeBlockOnWebThread:^{
     block();
+  }];
+}
+
+- (void)executeBlockOnWebThread:(dispatch_block_t)block
+{
+  NSAssert(WebThreadRun, @"");
+  if (WebThreadRun) {
+    WebThreadRun(block);
   }
 }
 
 - (void)executeAsyncBlockOnJavaScriptQueue:(dispatch_block_t)block
 {
-  [self performSelector:@selector(executeBlockOnJavaScriptQueue:)
-               onThread:_javaScriptThread
-             withObject:block
-          waitUntilDone:NO];
+  [self executeBlockOnWebThread:^{
+    block();
+  }];
 }
 
 - (void)_runBlock:(dispatch_block_t)block

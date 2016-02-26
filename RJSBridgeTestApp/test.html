@@ -16,7 +16,8 @@
      var log = document.getElementById('out');
 
      rjs.ExportModule.call("hello", function(a){
-         log.innerHTML = a                           
+                           log.innerHTML = a;
+                           alert(a)
         });
      });
      
